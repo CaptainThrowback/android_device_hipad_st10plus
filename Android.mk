@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifneq ($(filter era4g,$(TARGET_DEVICE)),)
+ifneq ($(filter st10plus,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 

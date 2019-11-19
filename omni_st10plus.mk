@@ -14,9 +14,28 @@
 # limitations under the License.
 #
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-$(call inherit-product, device/hipad/st10plus/full_st10plus.mk)
+# Time Zone Data
+PRODUCT_COPY_FILES += \
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
+# Hardware-specific configs
+PRODUCT_COPY_FILES += \
+    device/hipad/st10plus/rootdir/init.recovery.sc8825.rc:root/init.recovery.sc8825.rc \
+    device/hipad/st10plus/rootdir/init.recovery.usb.rc:root/init.recovery.usb.rc
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE=Coolpad8076D \
+    BUILD_PRODUCT=Coolpad8076D
+
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := st10plus
 PRODUCT_NAME := omni_st10plus
+PRODUCT_BRAND := HIPAD
+PRODUCT_MODEL := ST10+
+PRODUCT_MANUFACTURER := HIPAD

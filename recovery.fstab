@@ -1,0 +1,7 @@
+# mount point	fstype		device					[device2]				flags
+/boot			mtd			recovery
+/cache			yaffs2		cache
+/data			yaffs2		userdata
+/recovery		mtd			boot
+/system			yaffs2		system
+/sdcard			vfat		/dev/block/mmcblk0p1 	/dev/block/mmcblk0 		flags=storage;removable

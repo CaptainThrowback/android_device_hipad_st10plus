@@ -1,6 +1,0 @@
-/boot		mtd	/dev/block/mtdblock9	flags=display="boot";backup=1
-/cache		yaffs2	/dev/block/mtdblock13	flags=display="cache";backup=1;wipeingui;wipeduringfactoryreset
-/data		yaffs2	/dev/block/mtdblock12	flags=display="data";backup=1;wipeingui
-/recovery	mtd	/dev/block/mtdblock10 	flags=display="recovery"
-/system		yaffs2	/dev/block/mtdblock11	flags=display="system";backup=1;wipeingui
-/sdcard		vfat		/dev/block/platform/sprd-sdhci.0/mmcblk0p1 flags=display="External-Storage";storage;removable;backup=0
