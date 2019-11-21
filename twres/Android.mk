@@ -1,3 +1,7 @@
+# Modified theme files to swap rebooting recovery and rebooting system
+# Needed since these are swapped in fstab and we're flashing TWRP to boot
+# and flashing stock boot to recovery to ensure device is always accessible
+
 LOCAL_PATH := $(call my-dir)
 
 # Modified portrait.xml

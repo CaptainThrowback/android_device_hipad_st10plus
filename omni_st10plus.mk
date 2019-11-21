@@ -14,24 +14,26 @@
 # limitations under the License.
 #
 
+# Time Zone Data
+PRODUCT_COPY_FILES += \
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-# Time Zone Data
-PRODUCT_COPY_FILES += \
-    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
-
 # Hardware-specific configs
 PRODUCT_COPY_FILES += \
     device/hipad/st10plus/rootdir/init.recovery.sc8825.rc:root/init.recovery.sc8825.rc \
     device/hipad/st10plus/rootdir/init.recovery.usb.rc:root/init.recovery.usb.rc
 
+# For update.zip compatibility
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=Coolpad8076D \
-    BUILD_PRODUCT=Coolpad8076D
+    BUILD_PRODUCT=cp8076d \
+    PRODUCT_NAME=cp8076d \
+    TARGET_DEVICE=Coolpad8076D
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := st10plus
